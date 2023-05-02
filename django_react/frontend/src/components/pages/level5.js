@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { TextField, Button } from "@mui/material";
 import handleClick from "./call";
+import "../HomeStyles.css";
 
 function Level5() {
     document.body.style.backgroundColor = "#d2e1f0";
@@ -49,7 +50,7 @@ function Level5() {
             <div className="tf">
                 <h3>Where do we look for the source of our secret chemical? {name} </h3>
             </div>
-            <Button variant="contained" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >SUBMIT</Button>
+            <button className="continuebtn" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >submit --&gt;</button>
         </>
     );
 }

@@ -4,6 +4,7 @@ import "./hanoi.css";
 import { TextField, Button } from "@mui/material";
 import "./puzzlle.css";
 import handleClick from "./call";
+import "../HomeStyles.css";
 
 function Level3() {
   document.body.style.backgroundColor = "#d2e1f0";
@@ -243,7 +244,7 @@ function Level3() {
         <h3>Winning is not all if moves are more than lowest necessary, are you sure? {name} </h3>
       </div>
       <div className="bf">
-        <Button variant="contained" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false}>SUBMIT</Button>
+      <button className="continuebtn" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >submit --&gt;</button>
       </div>
     </>
   );

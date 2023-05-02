@@ -1,7 +1,9 @@
 import "./HomeStyles.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
+import pokeore from "./logo.png";
+// import { Button } from "@mui/material";
+// import bgimg from "./cowboy_bebop.jpg";
 
 
 function Home() {
@@ -33,11 +35,13 @@ function Home() {
   return (
     <>
       <div className="home">
-        <h1>{entry ? entry.user : ""}</h1>
-        <Button onClick={() => {
+        <img src={pokeore} alt={pokeore} height="300"/>
+        <h1>Welcome, {entry ? entry.user : ""}</h1>
+        <h2>You are an alchemist after the well-sought ore needed to fabricate the potion that transforms animals into uncanny beasts. Are you up for the chase? </h2>
+        <button className="continuebtn" onClick={() => {
           window.location.href = address
-        }}>Continue hunt...</Button>
-        <Button href="/logout">Logout</Button>
+        }}>continue hunt --&gt;</button>
+        <a className="logoutbtn" href="/logout">am afraid, bye</a>
       </div>
     </>
   );

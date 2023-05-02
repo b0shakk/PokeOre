@@ -6,6 +6,7 @@ import { JigsawPuzzle } from "react-jigsaw-puzzle/lib";
 import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
 import img from "./putin.jpg";
 import handleClick from "./call";
+import "../HomeStyles.css";
 
 function Level1() {
     document.body.style.backgroundColor = "#d2e1f0";
@@ -62,7 +63,7 @@ function Level1() {
 
             </div>
             <div className="tf"><h3>yet you cannot lift it: {name} </h3></div>
-            <Button variant="contained" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >SUBMIT</Button>
+            <button className="continuebtn" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >submit --&gt;</button>
         </>
     );
 }

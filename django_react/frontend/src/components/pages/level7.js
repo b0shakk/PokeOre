@@ -3,6 +3,7 @@ import axios from "axios";
 import { TextField, Button } from "@mui/material";
 import wordle from "./wordle.jpeg";
 import handleClick from "./call";
+import "../HomeStyles.css";
 
 function Level7() {
     document.body.style.backgroundColor = "#d2e1f0";
@@ -49,7 +50,7 @@ function Level7() {
                     }}
                 />
             </div>
-            <Button variant="contained" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >SUBMIT</Button>
+            <button className="continuebtn" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >submit --&gt;</button>
         </>
     );
 }

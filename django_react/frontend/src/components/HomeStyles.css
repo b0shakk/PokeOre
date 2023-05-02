@@ -15,6 +15,17 @@
     background: -webkit-linear-gradient(45deg, #09009f, #32d390 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Source Code Pro', monospace;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    padding-bottom: 32px;
+    background: -webkit-linear-gradient(45deg, #09009f, #32d390 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Source Code Pro', monospace;
   }
   
   h3 {
@@ -28,4 +39,28 @@
     font-size: 22px;
     letter-spacing: 2px;
     color: #fff;
+    font-family: 'Source Code Pro', monospace;
   }
+
+.logoutbtn {
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background: -webkit-linear-gradient(45deg, #09009f, #32d390 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: transparent;
+  font-family: 'Source Code Pro', monospace;
+  padding-top: 60px;
+}
+
+.continuebtn {
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  background: -webkit-linear-gradient(45deg, #09009f, #32d390 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: transparent;
+  font-family: 'Source Code Pro', monospace;
+}

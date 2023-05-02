@@ -68,6 +68,20 @@ def sign_up_request(request, user):
         user=Person(username=username, email=email, password=password1, score=0, current_level=1, wrong_attempts=0)
         user.save()
 
+def pie_chart(request):
+    labels = []
+    data = []
+
+    queryset = Person.objects.order_by('score')[:5]
+    for person in queryset:
+        labels.append(person.username)
+        data.append(person.score)
+
+    return render(request, 'pie_chart.html', {
+        'labels': labels,
+        'data': data,
+    })
+
 
 class PersonView(viewsets.ModelViewSet):
     serializer_class = PersonSerializer

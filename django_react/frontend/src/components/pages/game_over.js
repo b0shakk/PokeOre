@@ -3,7 +3,7 @@ import axios from "axios";
 import { Button } from "@mui/material";
 
 function GameOver() {
-
+    document.body.style.backgroundColor = "#d2e1f0";
     const [entry, setNewEntry] = useState(null)
     const [address, setNewAddress] = useState("/level")
     useEffect(() => {
@@ -66,8 +66,8 @@ function GameOver() {
 
     return (
         <>
-            <h1>GAME OVER??</h1>
-            <Button onClick={() => handleClick(entry) }> Try Again</Button >
+            <h1>!?! game over !?!</h1>
+            <button className="continuebtn" onClick={() => handleClick(entry) }> wanna try again</button >
         </>
     );
 }

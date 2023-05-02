@@ -13,4 +13,5 @@ urlpatterns = [
     path('update-person/', UpdateView.as_view(), name='update-person'),
     path('negate-person/', NegateView.as_view(), name='negate-person'),
     path('try-again/', TryAgainView.as_view(), name='try-again'),
+    path('pie-chart/', views.pie_chart, name='pie-chart'),
 ]

@@ -3,6 +3,7 @@ import axios from "axios";
 import { TextField, Button } from "@mui/material";
 import rails from "./rails.jpg";
 import handleClick from "./call";
+import "../HomeStyles.css";
 
 function Level8() {
     document.body.style.backgroundColor = "#d2e1f0";
@@ -52,7 +53,7 @@ function Level8() {
                     }}
                 />
             </div>
-            <Button variant="contained" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >SUBMIT</Button>
+            <button className="continuebtn" onClick={() => handleClick(entry, name, entry.level)} disabled={(name === "") ? true : false} >submit --&gt;</button>
         </>
     );
 }

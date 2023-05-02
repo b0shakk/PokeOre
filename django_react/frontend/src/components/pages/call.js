@@ -19,7 +19,7 @@ import axios from "axios";
   
   
   const handleClick = (e, ans, level) => {
-    var answers = ["bubble", "bhubaneswar", "fifteen", "four", "underwater", "phscale", "basic", "pokemon", "0139"];
+    var answers = ["bubble", "bhubaneswar", "fifteen", "four", "underwater", "phscale", "naoh", "pokemon", "0139"];
 
     var CSRF_TOKEN = getCookie('csrftoken');
     if (!e)

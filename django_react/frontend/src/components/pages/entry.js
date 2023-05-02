@@ -1,7 +1,9 @@
+import "./entry.css";
+
 function Entry(props){
   return (
       <div className="entry">
-        <h3 >  Username: {props.name} Score: {props.score} Skill Rating: {props.softskill}</h3>
+        <h2 >  Alchemist {props.name}'s Score is {props.score} and Skill Rating: {props.softskill}</h2>
       </div>
   )
 }
