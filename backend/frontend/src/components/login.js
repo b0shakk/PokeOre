@@ -64,7 +64,7 @@ function Login() {
                                 <form method="POST">
                                     <p> <label>Username<span>*</span></label> <input value={username} onChange={((e) => setUsername(e.target.value))} name="username" id="username" type="text" placeholder="Username" required /> </p>
                                     <p> <label>Password<span>*</span></label> <input value={password} onChange={((e) => setPassword(e.target.value))} name="password" id="password" type="password" placeholder="Password" required /> </p>
-                                    <p> <input type="submit" value="Log In" onClick={(loginUser)} /> </p>
+                                    <p> <input type="submit" value="Log In" onClick={()=>(loginUser)} /> </p>
                                 </form>
                             </div>
                         </div>
