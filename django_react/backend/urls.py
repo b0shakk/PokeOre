@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from main import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 router = routers.DefaultRouter()
 router.register(r'main', views.PersonView, 'main')
@@ -26,3 +27,5 @@ urlpatterns = [
     path('analysis/', views.index, name='analysis'),
     path('game-over/', views.index, name='game-over'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
