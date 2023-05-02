@@ -69,7 +69,7 @@ Sign up:
 Login:
 
 'Home' page:
-![](https://drive.google.com/file/d/15I27pTtKDn4Ml68tSMzavPVaSKXgvhxy/view?usp=share_link)
+![](https://drive.google.com/file/d/15I27pTtKDn4Ml68tSMzavPVaSKXgvhxy/preview)
 
 button for continuing from the last level you reached \
 continue hunt -->
