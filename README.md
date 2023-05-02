@@ -56,10 +56,29 @@ pip install crispy-bootstrap5
 pip install django-crispy-forms
 ```
 
-For frontend, build npm:
+For frontend, build npm and run it:
 ```
 npm run build
+npm start
 ```
+
+## Requirements CheckList
+
+**Feature List**
+- [x] Anyone with an email address can create an Id and password to participate in the game
+- [x] The puzzle must contain
+  - [x] Minimum 5 clues
+  - [x] Minimum 2 dead-ends
+  - [x] Minimum 1 solution
+- [x] All the progress / user data depending on your puzzle requirements should be stored for every user
+- [x] On refreshing, from either browser or website, the puzzle should start from the same step or give the user an option to restart
+- [x] A dashboard for the admin where the progress of all the users can be tracked & analyzed
+
+**Additional Requirements**
+- [x] User analytics depending on your puzzle should be stored and shown in the admin dashboard
+- [ ] Data analysis using different graphs or tables
+- [x] User Leaderboard
+
 ## Usage
 
 **Website**
@@ -67,27 +86,45 @@ npm run build
 Sign up:
 
 Login:
+![](https://files.catbox.moe/5sngsx.png)
 
 'Home' page:
-![](https://drive.google.com/file/d/15I27pTtKDn4Ml68tSMzavPVaSKXgvhxy/preview)
+![](https://files.catbox.moe/usd30o.png)
 
 button for continuing from the last level you reached \
 continue hunt -->
 
 'Play' for starting from Level 1:
+![](https://files.catbox.moe/ldt5gp.png)
+![](https://files.catbox.moe/3c955k.png)
+![](https://files.catbox.moe/vw905j.png)
+![](https://files.catbox.moe/pyb366.png)
+![](https://files.catbox.moe/gmxl1v.png)
+![](https://files.catbox.moe/j58npl.png)
+![](https://files.catbox.moe/hsifvi.png)
+![](https://files.catbox.moe/yajygu.png)
+![](https://files.catbox.moe/tuud6b.png)
+![](https://files.catbox.moe/ms9pkd.png)
+![](https://files.catbox.moe/k8q1tq.png)
+![](https://files.catbox.moe/7o44ey.png)
 
 'Score' page for seeing live **leaderboard** and **softskill rating**:
+![](https://files.catbox.moe/hok0iy.png)
 
-'Restart' for resetting score and restarting quest:
+'Restart' for resetting score and restarting quest after deadend:
+![](https://files.catbox.moe/wvvnpl.png)
 
 button for logging out \
 am afraid, bye 
 
 **Admin Dashboard**
 
-Users:
+superuser login: \
+username = 'bsk' \
+password = 'temp@123'
 
-Players:
+![](https://files.catbox.moe/t96ybn.png)
+![](https://files.catbox.moe/vdsyoa.png)
 
 
 ### Soft Skill Measure
@@ -117,19 +154,3 @@ answers {
 level2 : if answer == "kolkata" --> deadend1 \
 level7 : if answer == "basic" --> deadend2
 
-## Requirements CheckList
-
-**Feature List**
-- [x] Anyone with an email address can create an Id and password to participate in the game
-- [x] The puzzle must contain
-  - [x] Minimum 5 clues
-  - [x] Minimum 2 dead-ends
-  - [x] Minimum 1 solution
-- [x] All the progress / user data depending on your puzzle requirements should be stored for every user
-- [x] On refreshing, from either browser or website, the puzzle should start from the same step or give the user an option to restart
-- [x] A dashboard for the admin where the progress of all the users can be tracked & analyzed
-
-**Additional Requirements**
-- [x] User analytics depending on your puzzle should be stored and shown in the admin dashboard
-- [ ] Data analysis using different graphs or tables
-- [x] User Leaderboard

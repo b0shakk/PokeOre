@@ -1,9 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import axios from 'axios';
+
+
 
 import App from "./App";
 
+// axios.defaults.baseURL= 'http://localhost:7000';
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
