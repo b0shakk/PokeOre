@@ -16,6 +16,9 @@ import Analysis from './components/pages/analysis';
 import GameOver from './components/pages/game_over';
 
 import "./styles.css";
+import Login from './components/login';
+import Logout from './components/logout';
+import Signup from './components/sign-up';
 
 export default function App() {
   return (
@@ -36,6 +39,9 @@ export default function App() {
         <Route path="/score" element={<Score/>} />
         <Route path="/analysis" element={<Analysis/>} />
         <Route path="/game-over" element={<GameOver/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/logout" element={<Logout/>} />
       </Routes>
     </div>
   );

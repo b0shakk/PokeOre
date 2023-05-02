@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from .forms import LoginForm
@@ -16,16 +17,23 @@ def index(request):
         return redirect('/login')
 
 def login_request(request):
-    form = LoginForm()
 
     if request.method == 'POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        user = Person.objects.filter(username=username)
-        if user:
-            return redirect('/')
+        body_uni=request.body.decode('utf-8')
+        body=json.loads(body_uni)
 
-    return render(request, 'registration/login.html', {"form": form})
+        username=body['username']
+        password=body['password']
+        
+        queryset = Person.objects.filter(username=username)
+        person= queryset[0]
+
+        print(username, password)
+        if person.password==password:
+            return JsonResponse({'username':username})
+    # return redirect('/login')
+    # return render(request, 'registration/login.html', {"form": form})
+    return JsonResponse({'username':''})
 
 
 def current(request):
@@ -40,33 +48,45 @@ def current(request):
         return JsonResponse(context)
     return JsonResponse({})  
 
+def address(request):
+    if request.method=='POST':
+        body_uni=request.body.decode('utf-8')
+        body=json.loads(body_uni)
+
+        username=body['username']
+        queryset= Person.objects.filter(username=username)
+        if len(queryset)==0:
+            return JsonResponse({})
+        person= queryset[0]
+        print(person.current_level)
+        context = {
+                'level': person.current_level
+            }
+        return JsonResponse(context)
+    return JsonResponse({})
+    
+
 def logout_request(request):
     logout(request)
     return redirect("/login")
 
 def sign_up(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            sign_up_request(request, user)
-            return redirect('/login')
-    else:
-        form = RegisterForm()
+        body_uni=request.body.decode('utf-8')
+        body=json.loads(body_uni)
 
-    return render(request, 'registration/sign_up.html', {"form": form})
-     
-def sign_up_request(request, user):
+        username=body['name']
+        password=body['password']
+        email=body['email']
+        
+        user=Person(username=username, email=email, password=password, score=0, current_level=1, wrong_attempts=0)
+        user.save()    
+        return JsonResponse({'username':username}) 
+        
+
+    return JsonResponse({'username':''})
     
-    if request.method == 'POST':
-        username=request.POST['username']
-        password1=request.POST['password1']
-        password2=request.POST['password2']
-        email=request.POST['email']
-        answer= "answer"
-        print(username, password1, password2, email)
-        user=Person(username=username, email=email, password=password1, score=0, current_level=1, wrong_attempts=0)
-        user.save()
+        
 
 def pie_chart(request):
     labels = []
@@ -82,6 +102,13 @@ def pie_chart(request):
         'data': data,
     })
 
+def fetchScore(request):
+    queryset = Person.objects.all()
+    per=[]
+    for person in queryset:
+        per.append({"username":person.username, "score":person.score, "wrong_attempts":person.wrong_attempts, "current_level":person.current_level})
+    # print(per)
+    return JsonResponse({"data": per})
 
 class PersonView(viewsets.ModelViewSet):
     serializer_class = PersonSerializer

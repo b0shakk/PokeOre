@@ -13,11 +13,11 @@ function Score() {
     function getEntry() {
         axios({
             method: "GET",
-            url: "/api/main/",
+            url: "/api/score/",
         }).then((response) => {
             const data = response.data
             console.log(data)
-            setNewEntry(data)
+            setNewEntry(data.data)
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response);
